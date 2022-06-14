@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollectableBase : MonoBehaviour
 {
 
+    public string TagCompare = "Player";
     public ParticleSystem particle;
 
     [Header("Audio")]
@@ -19,7 +20,7 @@ public class CollectableBase : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.transform.CompareTag("Player"))
+        if(collision.transform.CompareTag(TagCompare))
         {
             Collect();
         }

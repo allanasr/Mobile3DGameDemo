@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650514228790471350}
   - component: {fileID: 650514228790471353}
-  - component: {fileID: 650514228790471354}
+  - component: {fileID: 4509033134934923429}
   m_Layer: 0
   m_Name: CoinPrefab
   m_TagString: Untagged
@@ -46,7 +46,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &650514228790471354
+--- !u!114 &4509033134934923429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,11 +55,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 650514228790471355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd636dc041301024aa95cd7618402988, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b8552a32d1e97f43af7011bfb118df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TagCompare: CoinCollector
   particle: {fileID: 0}
   audioSource: {fileID: 0}
+  collider: {fileID: 650514228790471353}
+  lerp: 7
+  collect: 0
+  minDistance: 1
 --- !u!1 &6601091749133304839
 GameObject:
   m_ObjectHideFlags: 0
