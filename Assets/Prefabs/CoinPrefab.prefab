@@ -62,7 +62,7 @@ MonoBehaviour:
   particle: {fileID: 0}
   audioSource: {fileID: 0}
   collider: {fileID: 650514228790471353}
-  lerp: 7
+  lerp: 10
   collect: 0
   minDistance: 1
 --- !u!1 &6601091749133304839

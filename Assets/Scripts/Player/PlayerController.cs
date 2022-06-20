@@ -19,11 +19,15 @@ public class PlayerController : Singleton<PlayerController>
     private bool canRun;
     private float currentSpeed;
     private Vector3 startPos;
+    private float baseAnimationSpeed = 10f;
 
     public GameObject startScreen;
     public GameObject endScreen;
     public GameObject coinCollector;
     public TMP_Text powerUpTxt;
+
+    [Header("Animation")]
+    public AnimationManager animationManager;
 
     private void Start()
     {
@@ -49,7 +53,7 @@ public class PlayerController : Singleton<PlayerController>
         if (collision.transform.tag == tagToCheck)
         {
             Debug.Log("inimigo");
-            if (!invincible) EndGame();
+            if (!invincible) EndGame(AnimationManager.AnimationType.DEAD);
         }
     }
 
@@ -57,20 +61,22 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.tag == "EndLine")
         {
-            if (!invincible) EndGame();
+            if (!invincible) EndGame(AnimationManager.AnimationType.DEAD);
         }
     }
-    private void EndGame()
+    private void EndGame(AnimationManager.AnimationType animationType = AnimationManager.AnimationType.IDLE)
     {
         canRun = false;
         endScreen.SetActive(true);
-        LoadScene.Instance.Load(0);
+        animationManager.SetTrigger(animationType);
+        transform.DOMoveZ(-1f, 1).SetRelative();
     }
 
     public void StartGame()
     {
         canRun = true;
         startScreen.SetActive(false);
+        animationManager.SetTrigger(AnimationManager.AnimationType.RUN, currentSpeed/baseAnimationSpeed); 
     }
     public void Restart()
     {
@@ -87,11 +93,14 @@ public class PlayerController : Singleton<PlayerController>
     public void PowerUpSpeed(float f)
     {
         currentSpeed = f;
+        animationManager.SetTrigger(AnimationManager.AnimationType.RUN, currentSpeed / baseAnimationSpeed);
+
     }
 
     public void ResetSpeed()
     {
         currentSpeed = speed;
+        animationManager.SetTrigger(AnimationManager.AnimationType.RUN, currentSpeed / baseAnimationSpeed);
     }
 
     public void SetInvincible(bool b)
