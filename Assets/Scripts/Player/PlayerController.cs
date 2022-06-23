@@ -99,7 +99,6 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         currentSpeed = speed;
-        animationManager.SetTrigger(AnimationManager.AnimationType.RUN, currentSpeed / baseAnimationSpeed);
     }
 
     public void SetInvincible(bool b)

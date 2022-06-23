@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     private List<LevelPieceBase> spawnedPieces = new List<LevelPieceBase>();
     private LevelPieceBaseSetup levelPieceBaseSetup;
 
-    private void Awake()
+    private void Start()
     {
         CreateLevelPieces();
     }
