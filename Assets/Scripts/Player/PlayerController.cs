@@ -52,7 +52,6 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheck)
         {
-            Debug.Log("inimigo");
             if (!invincible) EndGame(AnimationManager.AnimationType.DEAD);
         }
     }
@@ -61,7 +60,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.tag == "EndLine")
         {
-            if (!invincible) EndGame(AnimationManager.AnimationType.DEAD);
+            EndGame(AnimationManager.AnimationType.IDLE);
         }
     }
     private void EndGame(AnimationManager.AnimationType animationType = AnimationManager.AnimationType.IDLE)
@@ -81,7 +80,7 @@ public class PlayerController : Singleton<PlayerController>
     public void Restart()
     {
         canRun = true;
-        endScreen.SetActive(false);
+        LoadScene.Instance.Load(0);
     }
 
     #region PowerUps
