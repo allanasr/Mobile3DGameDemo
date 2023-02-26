@@ -29,12 +29,25 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimationManager animationManager;
 
+    [SerializeField] BounceHelper bounceHelper;
+
     private void Start()
     {
         startPos = transform.position;
         ResetSpeed();
+        StartAnimation();
     }
 
+    private void StartAnimation()
+    {
+        transform.localScale = Vector3.zero;
+        transform.DOScale(1, 1f).SetEase(Ease.OutBounce);
+    }
+    public void Bounce()
+    {
+        if (bounceHelper != null)
+            bounceHelper.Bounce();
+    }
     private void Update()
     {
 
@@ -75,7 +88,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         canRun = true;
         startScreen.SetActive(false);
-        animationManager.SetTrigger(AnimationManager.AnimationType.RUN, currentSpeed/baseAnimationSpeed); 
+        animationManager.SetTrigger(AnimationManager.AnimationType.RUN, currentSpeed / baseAnimationSpeed);
     }
     public void Restart()
     {
@@ -108,10 +121,10 @@ public class PlayerController : Singleton<PlayerController>
 
     public void ChangeHeight(float amount, float duration)
     {
-       /* var p = transform.position;
-        p.y = startPos.y + amount;
-        transform.position = p;
-        Invoke(nameof(ResetHeight), duration);*/
+        /* var p = transform.position;
+         p.y = startPos.y + amount;
+         transform.position = p;
+         Invoke(nameof(ResetHeight), duration);*/
 
         transform.DOMoveY(startPos.y + amount, duration).OnComplete(ResetHeight);
     }

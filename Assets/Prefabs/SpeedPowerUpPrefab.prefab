@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8056306787150728431}
   - component: {fileID: 8056306787150728428}
   - component: {fileID: 5577320897734502577}
+  - component: {fileID: 9112506470180553170}
   m_Layer: 0
   m_Name: SpeedPowerUpPrefab
   m_TagString: Untagged
@@ -113,3 +114,18 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   duration: 3
   speedAmount: 20
+--- !u!114 &9112506470180553170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056306787150728419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9c509b24a491b469c49b0829dd3360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 8056306787150728431}
+  duration: 0.2
+  startColor: {r: 1, g: 1, b: 1, a: 1}

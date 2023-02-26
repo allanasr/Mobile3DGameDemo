@@ -1411,6 +1411,7 @@ GameObject:
   - component: {fileID: 1834035291}
   - component: {fileID: 1834035296}
   - component: {fileID: 1834035297}
+  - component: {fileID: 1834035295}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -1500,6 +1501,21 @@ Transform:
   m_Father: {fileID: 1995085547}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1834035295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834035290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93051adc3a80f2944952300bc5600f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.05
+  scaleBounce: 1.2
+  ease: 1
 --- !u!65 &1834035296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1535,6 +1551,7 @@ MonoBehaviour:
   coinCollector: {fileID: 2111435350}
   powerUpTxt: {fileID: 988314155}
   animationManager: {fileID: 1353617980}
+  bounceHelper: {fileID: 1834035295}
 --- !u!1 &1958455604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1565,7 @@ GameObject:
   - component: {fileID: 1958455607}
   - component: {fileID: 1958455608}
   - component: {fileID: 1958455609}
+  - component: {fileID: 1958455610}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1575,7 +1593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958455604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.49789, y: 151.40753, z: -172.59703}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1600,6 +1618,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c4aff8c87cb43444ad27696da87847e, type: 2}
   - {fileID: 11400000, guid: 0d8af3da97067d14fa1cd800bf566f1a, type: 2}
   index: 0
+  scaleDuration: 0.1
+  timeBetweenPieces: 0.1
+  ease: 30
 --- !u!114 &1958455608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,6 +1665,22 @@ MonoBehaviour:
     - {r: 1, g: 0, b: 0.10174513, a: 0}
     - {r: 0.9138851, g: 0, b: 1, a: 0}
     - {r: 0.7834032, g: 0.7924528, b: 0.58686364, a: 0}
+--- !u!114 &1958455610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958455604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91d0cf834ecb8e4cb937f9caacc219c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itens: []
+  scaleDuration: 1
+  timeBetweenPieces: 0.01
+  ease: 30
 --- !u!1 &1995085546
 GameObject:
   m_ObjectHideFlags: 0

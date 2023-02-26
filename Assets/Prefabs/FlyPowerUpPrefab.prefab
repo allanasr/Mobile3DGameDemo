@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 87617950127955490}
   - component: {fileID: 87617950127955489}
   - component: {fileID: 1825012817524408885}
+  - component: {fileID: -4334379461991318790}
   m_Layer: 0
   m_Name: FlyPowerUpPrefab
   m_TagString: Untagged
@@ -113,3 +114,18 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   duration: 2
   heightAmount: 5
+--- !u!114 &-4334379461991318790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87617950127955502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9c509b24a491b469c49b0829dd3360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 87617950127955490}
+  duration: 0.2
+  startColor: {r: 1, g: 1, b: 1, a: 1}
