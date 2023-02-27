@@ -26,6 +26,9 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject coinCollector;
     public TMP_Text powerUpTxt;
 
+    [Header("Limits")]
+    public float limit = 4;
+
     [Header("Animation")]
     public AnimationManager animationManager;
 
@@ -55,6 +58,9 @@ public class PlayerController : Singleton<PlayerController>
         pos = target.position;
         pos.y = transform.position.y;
         pos.z = transform.position.z;
+
+        if (pos.x > -limit) pos.x = -limit;
+        else if (pos.x < limit) pos.x = limit;
 
         transform.position = Vector3.Lerp(transform.position, pos, lerpSpeed * Time.deltaTime);
 

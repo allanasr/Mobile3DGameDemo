@@ -11,13 +11,7 @@ public class CollectableBase : MonoBehaviour
     [Header("Audio")]
 
     public AudioSource audioSource;
-    private void Awake()
-    {
-        if(particle)
-        {
-            particle.transform.SetParent(null);
-        }
-    }
+  
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.transform.CompareTag(TagCompare))
@@ -32,7 +26,11 @@ public class CollectableBase : MonoBehaviour
     }
     protected virtual void OnCollect()
     {
-        //particle.Play();
+        if (particle)
+        {
+            particle.transform.SetParent(null);
+        }
+        particle.Play();
         //audioSource.Play();
     }
 }
